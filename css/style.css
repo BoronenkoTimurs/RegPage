@@ -2,13 +2,23 @@ html{
     font-size: 62.5%;
 }
 body{
-    background: #4f4a4a;
+ overflow: hidden;
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.bg{
+  background: url(../images/backgorund.jpg) no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  border: none;
+  transform: scale(1.1);
+  filter: blur(10px);
+
 }
 .header{
     position: fixed;
@@ -20,6 +30,7 @@ body{
     width: 100vw;
     background: transparent;
     padding: 2.5rem 12.5%;
+    z-index: 1;
 }
 .nav-bar a{
     position: relative;
@@ -66,7 +77,7 @@ body{
     background: transparent;
 }
 .search-bar .search__input::placeholder{
-    font-size: clamp(1rem, 1.2vw, 4rem);
+    font-size: clamp(1rem, 1.2vw, 2rem);
     color: white;
 }
 .search-bar button{
@@ -87,4 +98,196 @@ body{
 }
 .search-bar button i:hover{
     filter: blur(0);
+}
+
+/* Container */
+.container{
+    background: url(../images/backgorund.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 55rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    backdrop-filter: blur(50px);
+    display: flex;
+    
+    
+}
+.container .container__hero{
+    color: white;
+    margin: 8rem 5rem;
+    width: 60%;
+}
+.container__hero h1{
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+}
+.container__hero h2{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    padding-bottom: 13rem;
+}
+.container i.firebase{
+    padding: 0;
+}
+.container__hero h3{
+    font-size: 2.7rem;
+}
+.container__hero p{
+    font-size: 1.5rem;
+    padding: 2rem 0rem;
+}
+.social-icon a i{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding-right: 1rem;
+    display: inline-block;
+    transition: all .5s ease;
+}
+.social-icon i:hover {
+    color: black;
+    transform: scale(1.5);
+}
+.container__reg-form{
+    width: 45%;
+    height: 100%;
+    border-radius: 25px 0 0 25px;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container__reg-form h1{
+    font-size: 4rem;
+}
+.container__reg-form .input-box{
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: clamp(180px, 20vw,500px);
+    justify-content: space-between;
+}
+.input-box input{
+    background: transparent;
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding-right: 1.5rem;
+    color: white;
+}
+.input-box i{
+    font-size: 2rem;
+}
+.input-box input::placeholder{
+    color: white;
+}
+.container__reg-form .remember-forgot{
+    font-size: 1.5rem;
+    width: clamp(180px, 20vw,500px);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: -0.5rem 0 1.5rem;
+}
+.remember-forgot a{
+    color: white;
+    text-decoration: none;
+}
+.container__reg-form .btn{
+    width: 100%;
+    padding: 1rem 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #c4103d;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 8px 5px #a00e32;
+    transition: all .5s ease;
+}
+.container__reg-form .btn:hover{
+    transform: translateY(-10px);
+}
+.container__reg-form .login-register{
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.login-register p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+    transition: all .5s ease;
+}
+
+@media screen and (max-width: 917px){
+    .container__reg-form{
+        width: 100%;
+        transition: all .5s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 647px) {
+    .header{
+        padding: 1rem;
+        transition: .5s ease;
+    }
+    .header .nav-bar a{
+        font-weight: 700;
+    }
+    .nav-bar{
+        display: flex;
+        align-items: center;
+    }
+    .search-bar .search__input::placeholder{
+        font-size: 1.3rem;
+        transition: all .5s ease;
+    }
+    .container{
+        transition: all .5s ease;
+        flex-direction: column;
+        text-align: center;
+        width: 100vw;
+    }
+    .container .container__hero{
+        transition: all .5s ease;
+        width: 100%;
+        height: 100vh;
+        margin: 8rem 0;
+        opacity: 0;
+    }
+    .container__hero h2{
+        justify-content: center;
+    }
+    .container__reg-form{
+        position: absolute;
+        transition: .5s ease;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+    }
+    .container__reg-form .input-box{
+        position: relative;
+        transition: .5s ease;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
 }
